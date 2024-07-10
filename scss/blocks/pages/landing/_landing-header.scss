@@ -1,0 +1,190 @@
+#landing-header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+.landing-header{
+    margin-top: 30px;
+    padding: 24px 32px;
+    width: 100%;
+    @include display($direction:row, $items:center, $justify:space-between);    
+    &__list, &__auth{
+        @include display($direction:row, $items:center, $justify:space-between);
+        gap: 32px;
+    }
+    &__list{
+        &--link{
+            @include display($direction:row, $items:center, $justify:space-between);
+            gap: 4px;
+            @include textStyle($fs:14px, $fw:600, $lh:16px, $clr:$primary-color);
+            transition: all .3s linear;
+            &:hover{
+                color: $secondary-color;
+                transition: all .3s linear;
+            }
+        }
+    }
+    &__auth{
+        &--link{
+            @include textStyle($fs:14px, $fw:600, $lh:16px, $clr:$primary-color);
+            &:hover{
+                color: $secondary-color;
+                transition: all .3s linear;
+            }
+        }
+        &--link:nth-child(2){
+            background-color: $primary-color;
+            color: $secondary-color;
+            padding: 15.5px 24px;
+            border-radius: 8px;
+            transition: all .3s linear;
+            &:hover{
+                background-color: $secondary-color;
+                color: $primary-color;
+                transition: all .3s linear;
+            }
+        }
+    }
+    &__burger{
+        display: none;
+        &--span{
+            width: 24px;
+            height: 3px;
+            background-color: $secondary-color;
+            border-radius: 8px;
+            transition: all .3s linear;
+        }
+    }
+}
+
+
+.landing-page{
+    &__menu{
+        display: none;
+    }
+    &__list{
+        &--link{
+            @include display($direction:row, $items:center, $justify:space-between);
+            gap: 4px;
+            @include textStyle($fs:14px, $fw:600, $lh:16px, $clr:$primary-color);
+            transition: all .3s linear;
+            &:hover{
+                color: $secondary-color;
+                transition: all .3s linear;
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .landing-header{
+        padding: 24px;
+        &__list, &__auth{
+            gap: 12px;
+        }
+    }
+}
+
+@media (max-width:664px) {
+    .landing-header{
+        justify-content: space-between;
+        &__list, &__auth, &__nav{
+            display: none;
+        }
+        &__burger{
+            @include display($direction:column, $items:center, $justify:space-between);
+            gap: 6px;
+            z-index: 90;
+        }
+        & .toggle{
+            & span{
+                background-color: $secondary-color;
+            }
+            & span:nth-child(3){
+                transition: all .3s linear;
+                transform: translateY(3px);
+                height: 1px;
+            }            
+            & span:nth-child(1){
+                transform: translateY(6px) rotate(45deg);
+                transition: all .3s linear;
+            }
+            & span:nth-child(2){
+                transition: all .3s linear;
+                transform: translateY(-3px) rotate(-45deg);
+            }
+        }
+        & .active{
+            right: 0;
+            transition: all .3s linear;
+        }
+    }
+    .landing-page{
+        &__menu{
+            padding: 100px 0;
+            @include display($direction:column, $items:center, $justify:flex-start);
+            gap: 30px;
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background-color: $third-color;
+            z-index: 50;
+            transition: all .3s linear;
+        }
+        &__list, &__auth{
+            @include display($direction:column, $items:center, $justify:flex-start);
+            gap: 20px;
+        }
+        &__auth{
+            &--link{
+                @include textStyle($fs:14px, $fw:600, $lh:16px, $clr:$primary-color);
+                &:hover{
+                    color: $secondary-color;
+                    transition: all .3s linear;
+                }
+            }
+            &--link:nth-child(2){
+                background-color: $primary-color;
+                color: $secondary-color;
+                padding: 15.5px 24px;
+                border-radius: 8px;
+                transition: all .3s linear;
+                &:hover{
+                    background-color: $secondary-color;
+                    color: $primary-color;
+                    transition: all .3s linear;
+                }
+            }
+        }
+    }
+}
+
+.scroll{
+    overflow: hidden;
+}
+
+.header-active{
+    background-color: #EDF3F8;
+}
+.changeColor{
+    margin-top: 0px;
+    & .landing-header__list--link, & .landing-header__auth--link{
+        color: $secondary-color;
+        &:hover{
+            color: $third-color;
+        }
+    }
+    & .landing-header__auth--link:nth-child(2){
+        background-color: $secondary-color;
+        color: $primary-color;
+        border: 1px solid $secondary-color;
+        &:hover{
+            background-color: $primary-color;
+            color: $secondary-color;
+            border: 1px solid $secondary-color;
+        }
+    }
+}

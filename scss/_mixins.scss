@@ -1,0 +1,13 @@
+@mixin display($direction:$direction, $items:items, $justify:$justify){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $items;
+    justify-content: $justify;
+}
+
+@mixin textStyle($fs:$fs, $fw:$fw, $lh:$lh, $clr:$clr){
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    color: $clr;
+}
