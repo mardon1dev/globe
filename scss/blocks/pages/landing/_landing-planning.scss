@@ -1,0 +1,135 @@
+#planning{
+    margin-top: 263px;
+}
+.planning{
+    width: 100%;
+    &__top{
+        @include display($direction:row, $items:center, $justify:space-between);
+        gap: 24px;
+    }
+    &__info{
+        &--title{
+            @include textStyle($fs:32px, $fw:700, $lh:32px, $clr:#000000)
+        }
+        &--text{
+            margin-top: 16px;
+            @include textStyle($fs:16px, $fw:400, $lh:16px, $clr:$secondary-color)
+        }
+    }
+    &__button{
+        max-width: 150px;
+        width: 100%;
+        padding: 11.5px 16px;
+        @include textStyle($fs:14px, $fw:400, $lh:14px, $clr:$secondary-color);
+        background-color: transparent;
+        border: 1px solid $third-color;
+        border-radius: 4px;
+        transition: all .3s linear;
+        cursor: pointer;
+        &:hover{
+            background-color: $third-color;
+            color: $primary-color;
+        }
+    }
+    &__places{
+        width: 100%;
+        margin-top: 40px;
+        @include display($direction:row, $items:flex-start, $justify:space-between);
+        row-gap: 32px;
+        // gap: 32px;
+        flex-wrap: wrap; 
+    }
+}
+.place{
+    width: 32%;
+    padding: 16px;
+    @include display($direction:row, $items:center, $justify:flex-start);
+    gap: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px 0 rgb(17, 34, 17, .05);
+    transition: all .3s linear;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 0 4px 16px 0 rgb(17, 34, 17, .1);
+        transform: scale(1.02);
+    }
+    &__img{
+        width: 90px;
+    }
+    &__info{
+        &--title{
+            @include textStyle($fs:16px, $fw:700, $lh:16px, $clr:$secondary-color)
+        }
+        &--list{
+            margin-top: 8px;
+            @include display($direction:row, $items:center, $justify:space-between);
+            gap: 21px;
+        }
+        &--item{
+            @include textStyle($fs:14px, $fw:400, $lh:14px,$clr:$secondary-color);
+            position: relative;
+            &::after{
+                content: '•';
+                position: absolute;
+                right: -11.5px;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                font-size: 20px;
+            }
+        }
+        &--item:nth-child(3){
+            &::after{
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width:1020px) {
+    .place{
+        width: 48%;
+        margin: 0 auto;
+    }
+}
+@media (max-width:768px) {
+    #planning{
+        margin-top: 300px;
+    }
+    .place{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+    }
+}
+
+@media (max-width:630px) {
+    #planning{
+        margin-top: 350px;
+    }
+}
+@media (max-width:576px) {
+    #planning{
+        margin-top: 400px;
+    }
+    .planning{
+        &__top{
+            flex-direction: column;
+            text-align: center;
+        }
+        &__button{
+            margin-left:auto;
+        }
+        &__places{
+            flex-direction: column;
+        }
+    }
+    .place{
+        padding: 0px;
+        width: 100%;
+        flex-direction: row;
+        align-self: flex-start;
+        justify-content: space-around;
+    }
+}
