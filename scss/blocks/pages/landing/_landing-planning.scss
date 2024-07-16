@@ -85,11 +85,73 @@
         }
     }
 }
+.flightStays{
+    margin-top: 80px;
+    @include display($direction:row, $items:flex-start, $justify:space-between);
+    gap: 24px;
+    &__item{
+        max-width: 604px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        & img{
+            width: 100%;
+            height: auto;
+        }
+        &:hover{
+            & .flightStays__info{
+                bottom: 5px;
+            }
+        }
+    }
+    &__info{
+        padding: 93px 101px 24px;
+        @include display($direction:column, $items:center, $justify:center);
+        text-align: center;
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        border-radius: 20px;
+        background: linear-gradient(rgb(0,0,0, 0) 0%, rgb(0,0,0, .4) 100%);
+        &--title{
+            margin-bottom: 8px;
+            @include textStyle($fs:40px, $fw:700, $lh:40px, $clr:$primary-color);
+        }
+        &--text{
+            margin-bottom: 16px;
+            @include textStyle($fs:16px, $fw:400, $lh:16px, $clr:$primary-color);
+        }
+        &--button{
+            @include display($direction:row, $items:center, $justify:center);
+            gap: 4px;
+            padding: 16px;
+            border: 1px solid $third-color;
+            outline: none;
+            background-color: $third-color;
+            border-radius: 4px;
+            transition: all .3s ease;
+            cursor: pointer;
+            color: $secondary-color;
+            &:hover{
+                border: 1px solid $primary-color;
+                background-color: $primary-color;
+                color: $secondary-color;
+            }
+        }
+    }
+}
 
 @media (max-width:1020px) {
     .place{
         width: 48%;
         margin: 0 auto;
+    }
+    .flightStays{
+        &__info{
+            padding: 93px 50px 24px;
+        }
     }
 }
 @media (max-width:768px) {
@@ -103,10 +165,29 @@
         align-content: center;
     }
 }
+    .flightStays{
+        &__info{
+            padding: 48px 50px 24px;
+            &--title{
+                font-size: 32px;
+                line-height: 32px;
+            }
+            &--text{
+                font-size: 14px;
+                line-height: 14px;
+            }
+            &--button{
+                padding: 12px ;
+            }
+        }
+    }
 
 @media (max-width:630px) {
     #planning{
         margin-top: 350px;
+    }
+    .flightStays{
+        flex-direction: column;
     }
 }
 @media (max-width:576px) {

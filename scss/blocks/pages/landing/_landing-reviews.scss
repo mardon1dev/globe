@@ -1,0 +1,99 @@
+#reviews{
+    margin-top: 70px;
+}
+.reviews{
+    width: 100%;
+    &__button{
+        max-width: 80px;
+    }
+}
+.review-swiper{
+    max-width: 100%;
+}
+.review{
+    max-width:475px;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 2px 4px 16px 0 rgba(17, 34, 17, .1), 24px 24px 0 0 #CDEAE1;
+    background-color: #fff;
+    position: relative;
+    z-index: 5;
+    &__title{
+        @include textStyle($fs:24px, $fw:700, $lh:24px, $clr:$secondary-color);
+    }
+    &__textWrapper{
+        margin-top: 24px;
+        margin-bottom: 12px;
+        height: 33px;
+        overflow: hidden;
+        transition:  all .3s linear;
+    }
+    &__text{
+        @include textStyle($fs:16px, $fw:400, $lh:16px, $clr:$fourth-color);
+    }
+    &__button{
+        display: block;
+        margin-left: auto;
+        @include textStyle($fs:14px, $fw:400, $lh:14px, $clr:$secondary-color);
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
+    &__rating{
+        @include display($direction:row, $items:flex-start, $justify:flex-start);
+        gap: 12px;
+    }
+    &__owner{
+        margin-top: 20px;
+        display: block;
+        @include textStyle($fs:14px, $fw:700, $lh:14px, $clr:$secondary-color);
+    }
+    &__position{
+        margin-top: 4px;
+        @include textStyle($fs:14px, $fw:400, $lh:14px, $clr:$fourth-color);
+    }
+    &__place{
+        margin-top: 12px;
+        @include display($direction:row, $items:center, $justify:flex-start);
+        gap: 8px;
+        & span{
+            @include textStyle($fs:14px, $fw:400, $lh:14px, $clr:$fourth-color);
+        }
+    }
+    &__img{
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width:640px) {
+    .review{
+        max-width: 100%;
+        &__title{
+            font-size: 18px;
+            line-height: 18px;
+        }
+        &__text{
+            font-size: 14px;
+            line-height: 14px;
+        }
+        &__textWrapper{
+            height: 15px;
+        }
+    }
+}
+
+.swiper {
+    width: 100%;
+    margin-top: 100px;
+    padding: 24px 5px;
+}
+
+.view{
+    height: auto;
+    overflow: visible;
+    transition:  all .3s linear;
+}
+
