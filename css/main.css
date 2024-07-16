@@ -70,6 +70,209 @@ h1, h2 {
   padding: 0 16px;
 }
 
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 16px 0 rgba(17, 34, 17, 0.05);
+}
+
+.header {
+  padding: 24px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__list, .header__auth {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.header__list--link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #112211;
+  transition: all 0.3s linear;
+}
+.header__list--link:hover {
+  color: #8DD3BB;
+  transition: all 0.3s linear;
+}
+.header__auth--link {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #112211;
+}
+.header__auth--link:hover {
+  color: #8DD3BB;
+  transition: all 0.3s linear;
+}
+.header__auth--link:nth-child(2) {
+  background-color: #112211;
+  color: #FFFFFF;
+  padding: 15.5px 24px;
+  border-radius: 8px;
+  transition: all 0.3s linear;
+  border: 1px solid #112211;
+}
+.header__auth--link:nth-child(2):hover {
+  background-color: #FFFFFF;
+  color: #112211;
+  transition: all 0.3s linear;
+}
+.header__burger {
+  display: none;
+}
+.header__burger--span {
+  width: 24px;
+  height: 3px;
+  background-color: #112211;
+  border-radius: 8px;
+  transition: all 0.3s linear;
+}
+
+.page__menu {
+  display: none;
+}
+.page__list--link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #FFFFFF;
+  transition: all 0.3s linear;
+}
+.page__list--link:hover {
+  color: #112211;
+  transition: all 0.3s linear;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 24px;
+  }
+  .header__list, .header__auth {
+    gap: 12px;
+  }
+}
+@media (max-width: 664px) {
+  .header {
+    justify-content: space-between;
+  }
+  .header__list, .header__auth, .header__nav {
+    display: none;
+  }
+  .header__burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    z-index: 90;
+  }
+  .header .toggle span {
+    background-color: #112211;
+  }
+  .header .toggle span:nth-child(3) {
+    transition: all 0.3s linear;
+    transform: translateY(3px);
+    height: 1px;
+  }
+  .header .toggle span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+    transition: all 0.3s linear;
+  }
+  .header .toggle span:nth-child(2) {
+    transition: all 0.3s linear;
+    transform: translateY(-3px) rotate(-45deg);
+  }
+  .header .active {
+    right: 0;
+    transition: all 0.3s linear;
+  }
+  .page__menu {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: #8DD3BB;
+    z-index: 50;
+    transition: all 0.3s linear;
+  }
+  .page__list, .page__auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .page__auth--link {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    color: #FFFFFF;
+  }
+  .page__auth--link:hover {
+    color: #112211;
+    transition: all 0.3s linear;
+  }
+  .page__auth--link:nth-child(2) {
+    background-color: #FFFFFF;
+    color: #112211;
+    padding: 15.5px 24px;
+    border-radius: 8px;
+    transition: all 0.3s linear;
+  }
+  .page__auth--link:nth-child(2):hover {
+    background-color: #112211;
+    color: #FFFFFF;
+    transition: all 0.3s linear;
+  }
+}
+.scroll {
+  overflow: hidden;
+}
+
+.changeColor .header__list--link, .changeColor .header__auth--link {
+  color: #112211;
+}
+.changeColor .header__list--link:hover, .changeColor .header__auth--link:hover {
+  color: #8DD3BB;
+}
+.changeColor .header__auth--link:nth-child(2) {
+  background-color: #112211;
+  color: #FFFFFF;
+  border: 1px solid #112211;
+}
+.changeColor .header__auth--link:nth-child(2):hover {
+  background-color: #FFFFFF;
+  color: #112211;
+  border: 1px solid #112211;
+}
+
 #landing-header {
   width: 100%;
   position: fixed;
@@ -657,6 +860,11 @@ h1, h2 {
   .hero__hotelWrap--four {
     grid-row: 4/5;
   }
+  .hero__promo {
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 10px;
+  }
 }
 #planning {
   margin-top: 263px;
@@ -1031,6 +1239,87 @@ h1, h2 {
 
 .landing-main {
   margin-top: 30px;
+}
+
+#flight-hero {
+  margin-top: 90px;
+  background-image: url("../../../../images/flight/hero_bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.flight-hero {
+  padding: 80px 0 254px;
+  position: relative;
+}
+.flight-hero__info {
+  max-width: 440px;
+  width: 100%;
+}
+.flight-hero__title {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 45px;
+  color: #FFFFFF;
+}
+.flight-hero__text {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+.flight-hero__main {
+  position: absolute;
+  width: 100%;
+  margin-top: 226px;
+  border-radius: 16px;
+  background-color: #FFFFFF;
+  padding: 32px;
+  z-index: 30;
+  box-shadow: 0 4px 16px 0 rgba(17, 34, 17, 0.05);
+}
+
+@media (max-width: 675px) {
+  .flight-hero {
+    text-align: center;
+  }
+  .flight-hero__title {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+#flight-discover {
+  margin-top: 376px;
+  background-image: url("../images/flight/flight-places.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 486px;
+}
+
+.flight-discover {
+  position: relative;
+}
+.flight-discover .planning__top {
+  width: 100%;
+  position: absolute;
+  top: -100px;
+}
+
+@media (max-width: 576px) {
+  .flight-discover .planning__top {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 16px 0 rgba(17, 34, 17, 0.05);
+    top: 170px;
+  }
+}
+.flight {
+  background-color: #E5E5E5;
 }
 
 #footer {

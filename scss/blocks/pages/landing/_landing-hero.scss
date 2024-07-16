@@ -368,5 +368,10 @@
                 grid-row: 4/5;
             }
         }
+        &__promo{
+            flex-direction: column;
+            gap: 12px;
+            padding-bottom: 10px;
+        }
     }
 }

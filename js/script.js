@@ -22,6 +22,7 @@ window.addEventListener("scroll", function(){
     }
 })
 
+
 function openTab(evt, cityName) {
   let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("hero__tabcontent");

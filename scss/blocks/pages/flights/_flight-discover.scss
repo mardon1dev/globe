@@ -1,0 +1,28 @@
+#flight-discover{
+    margin-top: 376px;
+    background-image: url("../images/flight/flight-places.png");
+    background-position:  bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 486px;
+}
+.flight-discover{
+    position: relative;
+    & .planning__top{
+        width: 100%;
+        position: absolute;
+        top: -100px;
+    }
+}
+@media (max-width:576px) {
+    .flight-discover{
+        & .planning__top{
+            background-color: $primary-color;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 16px 0 rgb(17, 34, 17, .05);
+            top: 170px;
+        }
+    }
+}

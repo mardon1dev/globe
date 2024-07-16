@@ -1,0 +1,44 @@
+#flight-hero{
+    margin-top: 90px;
+    background-image: url("../../../../images/flight/hero_bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.flight-hero{
+    padding: 80px 0 254px;
+    position: relative;
+    &__info{
+        max-width: 440px;
+        width: 100%;
+    }
+    &__title{
+        @include textStyle($fs:45px, $fw:700, $lh:45px,$clr:$primary-color);
+    }
+    &__text{
+        margin-top: 8px;
+        @include textStyle($fs:20px, $fw:500, $lh:20px,$clr:$primary-color);
+    }
+    &__main{
+        position: absolute;
+        width: 100%;
+        margin-top: 226px;
+        border-radius: 16px;
+        background-color: $primary-color;
+        padding: 32px;
+        z-index: 30;
+        box-shadow: 0 4px 16px 0 rgb(17, 34, 17, .05);
+    }
+}
+
+@media (max-width:675px) {
+    .flight-hero{
+        text-align: center;
+        &__title{
+            font-size: 30px;
+            line-height: 30px;
+        }
+
+    }
+}
