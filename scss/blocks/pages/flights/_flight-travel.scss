@@ -1,0 +1,94 @@
+#flight-travel{
+    margin-top: 80px;
+}
+.flight-travel{
+    &__bottom{
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 200px);
+        grid-gap: 24px;
+    }
+    &__info{
+        grid-column: 1/3;
+        grid-row: 1/3;
+        background-color: $third-color;
+        border-radius: 20px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &--wrapper{
+            position: relative;
+        }
+        &--price{
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 8px;
+            border-radius: 8px;
+            background-color: $primary-color;
+        }
+        &--title{
+            @include textStyle($fs:40px, $fw:700, $lh:40px,$clr:$secondary-color);
+        }
+        &--text{
+            margin-top: 24px;
+            @include textStyle($fs:14px, $fw:400, $lh:18px,$clr:$secondary-color);
+        }
+        &--book{
+            padding: 15px 0;
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            background-color: $primary-color;
+            border-radius: 4px;
+        }
+    }
+    &__image{
+        overflow: hidden;
+        border-radius: 12px;
+        & img{
+            width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: all .3s linear;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+@media (max-width:840px) {
+    .flight-travel{
+        &__bottom{
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(3, 200px);
+        }
+        &__info{
+            grid-column: 1/5;
+        }
+        &__image{
+            grid-column: 5/7;
+        }
+        &__image:nth-child(4){
+            grid-column: 1/4;
+        }
+        &__image:nth-child(5){
+            grid-column: 4/7;
+        }
+    }
+}
+
+@media (max-width:640px) {
+    .flight-travel{
+        &__info{
+            grid-column: 1/7;
+        }
+        &__image{
+            grid-column: 1/7;
+        }
+    }
+}
