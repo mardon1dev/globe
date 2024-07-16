@@ -86,8 +86,14 @@
     .flight-travel{
         &__info{
             grid-column: 1/7;
+            &--title{
+                font-size: 1.5rem;
+            }
         }
         &__image{
+            grid-column: 1/7;
+        }
+        &__image:nth-child(4), &__image:nth-child(5){
             grid-column: 1/7;
         }
     }

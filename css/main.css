@@ -1505,7 +1505,13 @@ header {
   .flight-travel__info {
     grid-column: 1/7;
   }
+  .flight-travel__info--title {
+    font-size: 1.5rem;
+  }
   .flight-travel__image {
+    grid-column: 1/7;
+  }
+  .flight-travel__image:nth-child(4), .flight-travel__image:nth-child(5) {
     grid-column: 1/7;
   }
 }
@@ -1694,8 +1700,16 @@ header {
     font-size: 14px;
     line-height: 14px;
   }
+  .footer__form {
+    flex-direction: column;
+  }
   .footer__form--input, .footer__form--button {
+    width: 100%;
     font-size: 14px;
     line-height: 14px;
+  }
+  .footer__lists {
+    flex-direction: column;
+    align-items: center;
   }
 }/*# sourceMappingURL=main.css.map */
